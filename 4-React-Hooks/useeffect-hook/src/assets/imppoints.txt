@@ -1,0 +1,9 @@
+const [clicked, setClicked] = useState("")
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    alert('We are in useState')
+  }, [count])
+
+
+here what useEffect will do is, it will run alert when the App component is rendered and will run jab wo dependency passed hogi jispe useEffect chalana hai, agar dependency na hui to sab buttons k render hone pe useEffect chalega

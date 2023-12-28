@@ -1,20 +1,33 @@
+import React, { useEffect, useState } from 'react'
 
-import './App.css'
 
-function App() {
- 
-  const useEffect(() => {
-    first
-  
-    return () => {
-      second
-    }
-  }, [third])
-  
+const App = () => {
+
+  const [clicked, setClicked] = useState("")
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    alert('We are in useState')
+  }, [count])
 
   return (
     <>
-     <h1>Useeffect</h1>
+      <button onClick={() => setClicked('Subscribe')}>Subscribe</button>
+      <br />
+      <hr />
+
+      <button onClick={() => setClicked('To')}>To</button>
+      <br />
+      <hr />
+
+      <button onClick={() => setClicked('Me')}>Me</button>
+
+
+
+      <h1>{clicked}</h1>
+
+      <button onClick={() => { setCount(count + 1) }}>Increment</button>
+      <h1>{count}</h1>
     </>
   )
 }
