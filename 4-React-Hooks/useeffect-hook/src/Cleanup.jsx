@@ -15,8 +15,6 @@ const Cleanup = () => {
         }
     )
 
-
-
   }, [clicked, count])
 
   return (
@@ -24,17 +22,12 @@ const Cleanup = () => {
       <button onClick={() => setClicked('Subscribe')}>Subscribe</button>
       <br />
       <hr />
-
       <button onClick={() => setClicked('To')}>To</button>
       <br />
       <hr />
-
       <button onClick={() => setClicked('Me')}>Me</button>
 
-
-
       <h1>{clicked}</h1>
-
       <button onClick={() => { setCount(count + 1) }}>Increment</button>
       <h1>{count}</h1>
     </>

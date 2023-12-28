@@ -7,3 +7,7 @@ const [clicked, setClicked] = useState("")
 
 
 here what useEffect will do is, it will run alert when the App component is rendered and will run jab wo dependency passed hogi jispe useEffect chalana hai, agar dependency na hui to sab buttons k render hone pe useEffect chalega
+
+
+fetch data using useEffect:
+jab kuch render ho to us k baad useEffect se data fetch hojai
