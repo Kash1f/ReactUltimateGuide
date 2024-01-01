@@ -1,0 +1,3 @@
+Memoization is an optimization technique, the main use of it is to speed up the computer program 
+
+component is re-rendered when state or prop is changed  
