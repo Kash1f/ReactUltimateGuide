@@ -1,9 +1,20 @@
-import React from 'react'
+import React,{memo} from 'react'
 
-const NewComp = () => {
+
+const NewComp = (props) => {
+
+
+    console.log("newComp render");
+
+
+
+
   return (
-    <div>NewComp</div>
+    <div>
+        <h1>
+        NewComp {props.newCount}</h1>
+         </div>
   )
 }
 
-export default NewComp
+export default memo(NewComp);
