@@ -1,13 +1,26 @@
-import {useState} from "react";
-import CompA from './components/CompA'
+
+import Counter from './components/Counter'
+
 function App() {
 
  
-  const [data,setData] = useState("YT")
+  
   return (
     <>
-   <h1>Home</h1>
-    <CompA data={data}/>
+    <div className="App">
+    <h1>Count is 0</h1>
+    <Counter/>
+    <Counter/>
+    <Counter/>
+    <Counter/>
+
+    </div>
+
+
+
+
+
+
     </>
   )
 }

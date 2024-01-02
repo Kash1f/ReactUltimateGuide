@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 
-function Usememo() {
+function Memo() {
 
   const [count, setCount] = useState(0)
   const [input, setInput] = useState("")
