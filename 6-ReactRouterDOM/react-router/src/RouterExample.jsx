@@ -9,6 +9,8 @@ const RouterExample = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<div>Home</div>}></Route>
+          <Route path="/contact" element={<div>Contact Us</div>}></Route>
+          <Route path="/about" element={<div>About Us</div>}></Route>
         </Routes>
       </BrowserRouter>
     </>
