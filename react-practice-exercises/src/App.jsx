@@ -1,7 +1,10 @@
 import Counter from "./PracticeProblems/Counter"
+import Fetch from "./PracticeProblems/Fetch"
 import HelloWorld from "./PracticeProblems/HelloWorld"
 import Input from "./PracticeProblems/Input"
 import ListItems from "./PracticeProblems/ListItems"
+import Timer from "./PracticeProblems/Timer"
+import ToggleSwitch from "./PracticeProblems/ToggleSwitch"
 
 
 
@@ -14,7 +17,10 @@ function App() {
     {/* <HelloWorld/> */}
     {/* <Counter/> */}
     {/* <Input/> */}
-    <ListItems/>
+    {/* <ListItems/> */}
+    {/* <ToggleSwitch/> */}
+    {/* <Fetch/> */}
+    <Timer/>
 
     </>
 
