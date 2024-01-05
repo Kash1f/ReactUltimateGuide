@@ -14,11 +14,7 @@ const Timer = () => {
             const timer = setTimeout(()=> {timeOut()},1000);
             return () => clearTimeout(timer)
         }
-
     },[time])
-
-
-
 
   return (
     <div>
