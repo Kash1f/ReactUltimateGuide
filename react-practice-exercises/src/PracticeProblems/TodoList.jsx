@@ -10,6 +10,10 @@ const TodoList = () => {
     }
 
     addTodo = () => {
+        if(input.trim()!==''){
+            setTodos([...todos,input]);
+            setInput('')
+        }
         
     }
 
