@@ -9,7 +9,7 @@ const TodoList = () => {
         setInput(e.target.value)
     }
 
-    addTodo = () => {
+    const addTodo = () => {
         if(input.trim()!==''){
             setTodos([...todos,input]);
             setInput('')
