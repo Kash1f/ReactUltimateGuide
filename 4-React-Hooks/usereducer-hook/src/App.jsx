@@ -1,7 +1,12 @@
 import { useReducer } from "react";
 
+
+const reducer = (state,action) => {
+
+}
+
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, {count:0});
 
   const handleClickInc = () => {
     set;
@@ -15,8 +20,8 @@ function App() {
     <>
       <h1>{count}</h1>
 
-      <button onClick={handleClickInc}></button>
-      <button onClick={handleClickDec}></button>
+      <button onClick={handleClickInc}>+</button>
+      <button onClick={handleClickDec}>-</button>
     </>
   );
 }
