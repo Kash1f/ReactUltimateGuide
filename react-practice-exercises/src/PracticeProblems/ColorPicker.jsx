@@ -5,7 +5,7 @@ const ColorPicker = () => {
     const [selectedColor, setSelectedColor] = useState('#000000')
 
     const handleChange = (e) =>{
-        setSelectedColor
+        setSelectedColor(e.target.value)
     }
 
 
