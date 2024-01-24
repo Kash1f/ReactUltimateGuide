@@ -3,22 +3,23 @@ import { useReducer } from "react";
 
 const reducer = (state,action) => {
 
+
 }
 
 function App() {
   const [state, dispatch] = useReducer(reducer, {count:0});
 
   const handleClickInc = () => {
-    set;
+    dispatch({type:"increment"});
   };
 
   const handleClickDec = () => {
-    setCount;
+    dispatch({type:"decrement"});
   };
   
   return (
     <>
-      <h1>{count}</h1>
+      <h1>{state.count}</h1>
 
       <button onClick={handleClickInc}>+</button>
       <button onClick={handleClickDec}>-</button>

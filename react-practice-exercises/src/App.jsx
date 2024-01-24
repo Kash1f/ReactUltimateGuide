@@ -4,6 +4,7 @@ import Fetch from "./PracticeProblems/Fetch"
 import HelloWorld from "./PracticeProblems/HelloWorld"
 import Input from "./PracticeProblems/Input"
 import ListItems from "./PracticeProblems/ListItems"
+import ShoppingCart from "./PracticeProblems/ShoppingCart/ShoppingCart"
 import Timer from "./PracticeProblems/Timer"
 import TodoList from "./PracticeProblems/TodoList"
 import ToggleSwitch from "./PracticeProblems/ToggleSwitch"
@@ -24,7 +25,8 @@ function App() {
     {/* <Fetch/> */}
     {/* <Timer/> */}
     {/* <TodoList/> */}
-    <BgChange/>
+    {/* <BgChange/> */}
+    <ShoppingCart/>
 
     </>
 
