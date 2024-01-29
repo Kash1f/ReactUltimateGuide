@@ -1,5 +1,6 @@
 import BgChange from "./PracticeProblems/BgChange"
 import Counter from "./PracticeProblems/Counter"
+import DigitalClock from "./PracticeProblems/DigitalClock"
 import Fetch from "./PracticeProblems/Fetch"
 import HelloWorld from "./PracticeProblems/HelloWorld"
 import Input from "./PracticeProblems/Input"
@@ -28,7 +29,9 @@ function App() {
     {/* <TodoList/> */}
     {/* <BgChange/> */}
     {/* <ShoppingCart/> */}
-    <StopWatch/>
+    {/* <StopWatch/> */}
+    <DigitalClock/>
+   
 
     </>
 
