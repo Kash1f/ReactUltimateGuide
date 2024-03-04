@@ -1,4 +1,5 @@
 import BgChange from "./PracticeProblems/BgChange"
+import ColorPicker from "./PracticeProblems/ColorPicker"
 import Counter from "./PracticeProblems/Counter"
 import DigitalClock from "./PracticeProblems/DigitalClock"
 import Fetch from "./PracticeProblems/Fetch"
@@ -10,6 +11,8 @@ import StopWatch from "./PracticeProblems/StopWatch"
 import Timer from "./PracticeProblems/Timer"
 import TodoList from "./PracticeProblems/TodoList"
 import ToggleSwitch from "./PracticeProblems/ToggleSwitch"
+
+import './App.css'
 
 
 
@@ -30,7 +33,8 @@ function App() {
     {/* <BgChange/> */}
     {/* <ShoppingCart/> */}
     {/* <StopWatch/> */}
-    <DigitalClock/>
+    {/* <DigitalClock/> */}
+    <ColorPicker/>
    
 
     </>
