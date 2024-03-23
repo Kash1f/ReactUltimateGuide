@@ -1,14 +1,26 @@
-import React from 'react'
-import CompB from './CompC'
+import { createContext } from "react"
+import CompB from "./CompB"
 
-const CompA = ({data}) => {
+//context name should be descriptive of what you are working with
+export const UserContext = createContext();
 
- 
+
+const CompA = () => {
+
+ const user = "mydata"
+
   return (
     <>
-    <div>CompA</div>
-        <CompB data={data}/>
+    <div className="box">
+      <h1>ComponentA</h1>
+      <h2>{`Hello ${user}`}</h2>
+      
+      <UserContext.Provider value={user}>
+      <CompB user={user}/>
+      </UserContext.Provider>
+      
 
+    </div>
     </>
   )
 }
