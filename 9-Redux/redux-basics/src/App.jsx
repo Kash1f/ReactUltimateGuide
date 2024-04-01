@@ -10,7 +10,7 @@ function App() {
     <>
     <button onClick={e => dispatch({type:'INCREMENT'})}>Increment</button>
   <Counter/>
-  <button>Decrement</button>
+  <button onClick={e => dispatch({type: 'DECREMENT'})}>Decrement</button>
     </>
   )
 }
