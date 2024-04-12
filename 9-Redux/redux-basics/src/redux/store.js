@@ -8,7 +8,7 @@ const reducer = (state = 0, action) => {
     case "INCREMENT":
       return state + 1;     //agar user INCREMENT pe click karta hai to mujhe state me 1 add karna hai
     case "DECREMENT":
-      return state + 1;
+      return state - 1;
     default:
       return state;
   }

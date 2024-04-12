@@ -19,3 +19,7 @@ export default App
 
 //Notes:
 //useDispatch will be used to dispatch actions
+
+//Steps for this redux example
+
+//1. Created buttons Increment and Decrement aur usme hum events dispatch kar rahe hain
