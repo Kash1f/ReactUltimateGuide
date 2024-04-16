@@ -10,7 +10,7 @@ const cartSlice = createSlice({
     name: "Cart",
     initialState:[],    //empty array because is me items hongy
     reducers: {
-        addItem: (state,action)=>{
+        addItem: (state,action)=>{ //jo bhi user payload send karega wo isme aaiga like increment
             state = [...state, action.payload];   //existing state spread and last me new items ko daaldia via action.payload
         }
     }
