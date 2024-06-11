@@ -20,3 +20,5 @@ const Product = (props) => {
 };
 
 export default Product;
+
+//1. here addItem is an action to the event that will go to the redux store and will update the state and add items to the cart

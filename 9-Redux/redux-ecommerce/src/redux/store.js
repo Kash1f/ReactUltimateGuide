@@ -6,3 +6,5 @@ export const store = configureStore({
     cart: cartReducer,  //cartReducer is ready, aik reducer banchuka hai cart ka
     },
 })
+
+//2. store is created and this store is further used with cartSlice.

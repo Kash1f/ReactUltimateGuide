@@ -11,7 +11,8 @@ const cartSlice = createSlice({
     initialState:[],    //empty array because is me items hongy
     reducers: {
         addItem: (state,action)=>{ //jo bhi user payload send karega wo isme aaiga like increment
-            // state = [...state, action.payload];   //existing state spread and last me new items ko daaldia via action.payload
+
+        // state = [...state, action.payload];   //existing state spread and last me new items ko daaldia via action.payload
             state.push(action.payload)
         },
     },
@@ -34,3 +35,4 @@ export default cartSlice.reducer;
 //what is action in this addItem function?
 //jo bhi user payload waghera send karega
 
+// { addItem } will add items to the state and will be exported from here and imported in the products.jsx
