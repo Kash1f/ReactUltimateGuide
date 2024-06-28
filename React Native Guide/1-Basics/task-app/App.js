@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, ScrollView } from 'react-native';
 
 export default function App() {
 
@@ -13,10 +13,10 @@ export default function App() {
 
    const addTaskButton = () => {
     setTaskList((prevTask) => [...prevTask, task])
-    alert("Task Added")
    }
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput onChangeText={inputHandler} style={styles.inputBox} placeholder='Add Your Tasks'/>
@@ -31,6 +31,7 @@ export default function App() {
         </View>
       </View>
     </View>
+    </ScrollView>
   );
 }
 
