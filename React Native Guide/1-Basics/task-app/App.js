@@ -5,24 +5,30 @@ import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
 export default function App() {
 
    const [task, setTask] = useState('')
-   const [taskList, setTaskList] = ([])
+   const [taskList, setTaskList] = useState([])
 
    const inputHandler = (enteredText) => {
       setTask(enteredText)
    }
 
    const addTaskButton = () => {
-    setTaskList()
+    setTaskList((prevTask) => [...prevTask, task])
+    alert("Task Added")
    }
 
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput onChangeText={inputHandler} style={styles.inputBox} placeholder='Add Your Tasks'/>
-        <Button title="Add Task"></Button>
+        <Button onPress={addTaskButton}title="Add Task"></Button>
       </View>
       <View>
         <Text style={styles.textHeading}>Your Tasks: </Text>
+        <View>
+            {taskList?.map((item, index)=>(
+              <Text style={styles.taskItem} key={index}>{item}</Text>
+            ))}
+        </View>
       </View>
     </View>
   );
@@ -51,6 +57,24 @@ const styles = StyleSheet.create({
     fontFamily:'sans-serif',
     fontWeight: 'bold',
     marginLeft:8
+  },
+  taskItem:{
+    margin: 10,
+    padding: 20,
+    borderWidth: 1,
+    borderRadius: 20,
+    backgroundColor: "green",
+    color: "#FFFFFF",
+    fontWeight:"bold"
   }
 
 });
+
+
+//TODO LIST:
+
+/*
+
+--
+
+*/
