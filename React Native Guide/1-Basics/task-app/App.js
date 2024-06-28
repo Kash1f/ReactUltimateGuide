@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     borderColor:'#cccccc',
     borderRadius: 15,
     padding: 5,
-    paddingLeft: 12
+    paddingLeft: 15
   },
   textHeading : {
     marginTop:5, 
