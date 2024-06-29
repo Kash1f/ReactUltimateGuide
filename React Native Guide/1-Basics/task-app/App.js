@@ -8,7 +8,9 @@ import {
   Button,
   ScrollView,
   FlatList,
+  Alert
 } from "react-native";
+import TaskList from "./src/components/TaskList";
 
 export default function App() {
   const [task, setTask] = useState("");
@@ -19,6 +21,10 @@ export default function App() {
   };
 
   const addTaskButton = () => {
+    if(!task){
+      return Alert.alert("Please Add Task")
+    }
+    
     setTaskList((prevTask) => [...prevTask, task]);
   };
 
@@ -32,17 +38,23 @@ export default function App() {
         <Button onPress={addTaskButton} title="Add Task"></Button>
       </View>
 
-      <Text style={styles.textHeading}>Your Tasks: </Text>
+      {/* Conditional rendering to display No task when ther is none, if added then will change to the textHeading */}
+      {taskList.length > 0 ? (<Text style={styles.textHeading}>Your Tasks: </Text>) : (
+        <Text style={styles.textHeading}>No Tasks, Enter above to add your task </Text>
+      )
+      }
+      
 
       <FlatList
         data={taskList}
-        renderItem={({ item, index }) => (
-          <Text style={styles.taskItem} key={index}>
-            {item}
-          </Text>
+        renderItem={({ item, index }) => ( 
+          <TaskList item={item} index={index}/>
+          
         )}
         keyExtractor={(item, index) => index}
+        
       />
+      
     </View>
   );
 }

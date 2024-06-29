@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
 
-const TaskList = ({item, index}) => {
+const TaskList = ({ item, index }) => {
   return (
     <View>
       <Text style={styles.taskItem} key={index}>
