@@ -1,79 +1,87 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Button, ScrollView, FlatList } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Button,
+  ScrollView,
+  FlatList,
+} from "react-native";
 
 export default function App() {
+  const [task, setTask] = useState("");
+  const [taskList, setTaskList] = useState([]);
 
-   const [task, setTask] = useState('')
-   const [taskList, setTaskList] = useState([])
+  const inputHandler = (enteredText) => {
+    setTask(enteredText);
+  };
 
-   const inputHandler = (enteredText) => {
-      setTask(enteredText)
-   }
-
-   const addTaskButton = () => {
-    setTaskList((prevTask) => [...prevTask, task])
-   }
+  const addTaskButton = () => {
+    setTaskList((prevTask) => [...prevTask, task]);
+  };
 
   return (
-    
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput onChangeText={inputHandler} style={styles.inputBox} placeholder='Add Your Tasks'/>
-        <Button onPress={addTaskButton}title="Add Task"></Button>
+        <TextInput
+          onChangeText={inputHandler}
+          style={styles.inputBox}
+          placeholder="Add Your Tasks"/>
+        <Button onPress={addTaskButton} title="Add Task"></Button>
       </View>
-      <View>
-        <Text style={styles.textHeading}>Your Tasks: </Text>
-        <View>
-        <FlatList
+
+      <Text style={styles.textHeading}>Your Tasks: </Text>
+
+      <FlatList
         data={taskList}
         renderItem={({ item, index }) => (
-          <Text style={styles.taskItem} key={index}>{item}</Text>
+          <Text style={styles.taskItem} key={index}>
+            {item}
+          </Text>
         )}
-        keyExtractor={(item, index) => index}/>
-        </View>
-      </View>
+        keyExtractor={(item, index) => index}
+      />
     </View>
- 
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
   },
-  inputContainer : {
+  inputContainer: {
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
-  inputBox : {
-    width: '75%',
+  inputBox: {
+    width: "75%",
     borderWidth: 1,
-    borderColor:'#cccccc',
+    borderColor: "#cccccc",
     borderRadius: 15,
     padding: 5,
-    paddingLeft: 15
+    paddingLeft: 15,
   },
-  textHeading : {
-    marginTop:5, 
-    fontSize: 15, 
-    fontFamily:'sans-serif',
-    fontWeight: 'bold',
-    marginLeft:8
+  textHeading: {
+    marginTop: 5,
+    fontSize: 20,
+    fontFamily: "sans-serif",
+    fontWeight: "bold",
+    marginLeft: 8,
+
   },
-  taskItem:{
+  taskItem: {
     margin: 10,
     padding: 20,
     borderWidth: 1,
     borderRadius: 20,
     backgroundColor: "green",
     color: "#FFFFFF",
-    fontWeight:"bold"
-  }
-
+    fontWeight: "bold",
+  },
 });
-
 
 //TODO LIST:
 
