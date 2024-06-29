@@ -72,15 +72,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
 
   },
-  taskItem: {
-    margin: 10,
-    padding: 20,
-    borderWidth: 1,
-    borderRadius: 20,
-    backgroundColor: "green",
-    color: "#FFFFFF",
-    fontWeight: "bold",
-  },
+
 });
 
 //TODO LIST:
