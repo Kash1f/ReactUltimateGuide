@@ -1,13 +1,15 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList, Pressable } from "react-native";
 import React from "react";
 
-const TaskList = ({ item, index }) => {
+const TaskList = ({ item, index, handleDelete }) => {
   return (
-    <View>
-      <Text style={styles.taskItem} key={index}>
-        {item}
+    
+      <Pressable onPress={handleDelete.bind(this, item.id)}>
+      <Text style={styles.taskItem}>
+      {index + 1} : {item.task}
       </Text>
-    </View>
+     </Pressable>
+    
   );
 };
 

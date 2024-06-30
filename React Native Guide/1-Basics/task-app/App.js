@@ -26,9 +26,22 @@ export default function App() {
       return Alert.alert("Please Add Task");
     }
     //providing id here will add tasks with unique id, an object with task and id will be created, math.random will generate unqiue random ids
-    setTaskList((prevTask) => [...prevTask, {task: task, id: Math.random().toString() }]);
-  };
 
+    //first an array is created that will have prevtasks and then object with current task and unique id
+    setTaskList((prevTask) => [
+      ...prevTask, { task: task, id: Math.random().toString() },
+      
+    ]);};
+
+    //Delete Functionality
+    //we will get id as an argument
+    //id will be accessed
+    //421
+    const handleDelete = (id) => {
+      setTaskList((currentList) => currentList.filter((task) => task.id !== id))
+      console.log("Delete task called");
+    }
+ 
   return (
 
     //JSX
@@ -58,7 +71,7 @@ export default function App() {
         data={taskList}
         renderItem={({ item, index }) => (
           //passing item and index as props
-          <TaskList item={item} index={index} />
+          <TaskList handleDelete={handleDelete} item={item} index={index} />
         )}
         keyExtractor={(item, index) => index}
       />
