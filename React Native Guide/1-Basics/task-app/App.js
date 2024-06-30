@@ -6,13 +6,14 @@ import {
   TextInput,
   View,
   Button,
-  ScrollView,
   FlatList,
-  Alert
+  Alert,
 } from "react-native";
 import TaskList from "./src/components/TaskList";
 
 export default function App() {
+
+  //using useState to handle state of the app
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
 
@@ -21,40 +22,46 @@ export default function App() {
   };
 
   const addTaskButton = () => {
-    if(!task){
-      return Alert.alert("Please Add Task")
+    if (!task) {
+      return Alert.alert("Please Add Task");
     }
-    
-    setTaskList((prevTask) => [...prevTask, task]);
+    //providing id here will add tasks with unique id, an object with task and id will be created, math.random will generate unqiue random ids
+    setTaskList((prevTask) => [...prevTask, {task: task, id: Math.random().toString() }]);
   };
 
   return (
+
+    //JSX
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput
           onChangeText={inputHandler}
           style={styles.inputBox}
-          placeholder="Add Your Tasks"/>
+          placeholder="Add Your Tasks"
+        />
         <Button onPress={addTaskButton} title="Add Task"></Button>
       </View>
 
-      {/* Conditional rendering to display No task when ther is none, if added then will change to the textHeading */}
-      {taskList.length > 0 ? (<Text style={styles.textHeading}>Your Tasks: </Text>) : (
-        <Text style={styles.textHeading}>No Tasks, Enter above to add your task </Text>
-      )
-      }
-      
+      {/* Conditional rendering to display No task heading when ther is none, if added then Text will change to the textHeading i.e Your Tasks */}
+
+      {taskList.length > 0 ? (
+        <Text style={styles.textHeading}>Your Tasks: </Text>
+      ) : (
+        <Text style={styles.textHeading}>
+          No Tasks, Enter above to add your task
+        </Text>
+      )}
+
+      {/* Rendering list using FlatList */}
 
       <FlatList
         data={taskList}
-        renderItem={({ item, index }) => ( 
-          <TaskList item={item} index={index}/>
-          
+        renderItem={({ item, index }) => (
+          //passing item and index as props
+          <TaskList item={item} index={index} />
         )}
         keyExtractor={(item, index) => index}
-        
       />
-      
     </View>
   );
 }
@@ -82,25 +89,36 @@ const styles = StyleSheet.create({
     fontFamily: "sans-serif",
     fontWeight: "bold",
     marginLeft: 8,
-
   },
-
 });
 
 //TODO LIST:
 
 /*
 
---
+-Create a View container as it will be the main View.
+-Create another View for Input and Button.
+
+Till here add and delete functionality will be created.
+
+1. Add Functionality in Todo:
+--We will first create two state variables, task and taskList. Task will have the entered task while taskList will have the current and previous list
+
+2. Delete Functionality in Todo:
+
+-To delete any item from the list. Consdider that mujhe task 3 ko delete karna hai, jese hi uspe click ho to task delete hojai. To delete task humay id required hoti hai, because agar hum directly task delete karengy to hamare pas koi unique id nahi hai jiski base pe hum bata saken k humay konsi field ya task ko delete karna hai, id k baghair name k base pe confusion ho sakta hai, agar id use nahi hogi to koi sa bhi item ya puri list delete hojaigi
+
+
+--Map Method to Render each list:--
 
 <ScrollView>
-using map before we used FlatList
+
  {taskList?.map((item, index)=>(
               <Text style={styles.taskItem} key={index}>{item}</Text>
             ))}
 </ScrollView>
 
-How FlatList works:
+--How FlatList works:--
 
 1. Accessing data:
 
