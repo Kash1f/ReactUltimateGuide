@@ -4,7 +4,7 @@ import React from "react";
 const TaskList = ({ item, index, handleDelete }) => {
   return (
     
-      <Pressable onPress={handleDelete.bind(this, item.id)}>
+      <Pressable android_ripple={{color:'blue'}} onPress={() => handleDelete(item.id)}>
       <Text style={styles.taskItem}>
       {index + 1} : {item.task}
       </Text>

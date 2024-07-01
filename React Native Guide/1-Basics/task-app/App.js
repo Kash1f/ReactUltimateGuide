@@ -8,6 +8,7 @@ import {
   Button,
   FlatList,
   Alert,
+  Modal
 } from "react-native";
 import TaskList from "./src/components/TaskList";
 
@@ -16,6 +17,9 @@ export default function App() {
   //using useState to handle state of the app
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
+
+  //using popup modal
+  const [showModal, setShowModal] = useState(false)
 
   const inputHandler = (enteredText) => {
     setTask(enteredText);
