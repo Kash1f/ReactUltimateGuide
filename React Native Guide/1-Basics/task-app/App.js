@@ -21,6 +21,10 @@ export default function App() {
   //using popup modal
   const [showModal, setShowModal] = useState(false)
 
+  function handleModal(){
+    setShowModal(true)
+  }
+
   const inputHandler = (enteredText) => {
     setTask(enteredText);
   };
@@ -56,7 +60,7 @@ export default function App() {
           style={styles.inputBox}
           placeholder="Add Your Tasks"
         />
-        <Button onPress={addTaskButton} title="Add Task"></Button>
+        <Button handleModal={handleModal} onPress={addTaskButton} title="Add Task"></Button>
       </View>
 
       {/* Conditional rendering to display No task heading when ther is none, if added then Text will change to the textHeading i.e Your Tasks */}
