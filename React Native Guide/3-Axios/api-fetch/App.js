@@ -1,10 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
+import { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+
+  const getApiData = () => {
+    //api call
+    const url = "https://jsonplaceholder.typecode.com/posts/1"
+    const result = fetch(url)
+  }
+  useEffect(()=>{
+    getApiData();
+  },[])
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Fetch Api!</Text>
       <StatusBar style="auto" />
     </View>
   );
