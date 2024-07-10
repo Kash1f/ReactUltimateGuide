@@ -4,7 +4,7 @@ import React from 'react'
 const Header = () => {
   return (
     <View>
-      <Text  style={{fontSize:30}}>0</Text>
+      <Text style={{fontSize:30}}>0</Text>
     </View>
   )
 }
