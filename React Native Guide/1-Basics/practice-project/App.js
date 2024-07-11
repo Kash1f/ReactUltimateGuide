@@ -1,20 +1,41 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Home from './components/Home';
+import Movie from './components/Movie';
 
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Movie App</Text>
+   
+<>
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown:false}}>
+      <Stack.Screen name='Home' component={Home} />
+      <Stack.Screen name="Movie" component={Movie}/>
+    </Stack.Navigator>
+    </NavigationContainer>
+
+
+
+
+
+
+
+
       <StatusBar style="auto" />
-    </View>
+      </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  // container: {
+  //   flex: 1,
+  //   backgroundColor: '#fff',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
 });
