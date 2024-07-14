@@ -4,7 +4,7 @@ import React from 'react'
 const Product = () => {
   return (
     <View>
-      <Text  style={{fontSize:30}}>Products</Text>
+      <Text style={{fontSize:22}}>Products</Text>
     </View>
   )
 }
