@@ -6,7 +6,7 @@ import { legacy_createStore } from "redux";
 const reducer = (state = 0, action) => {
   switch (action.type) {
     case "INCREMENT":
-      return state + 1;     //agar user INCREMENT pe click karta hai to mujhe state me 1 add karna hai
+      return state + 1;     //agar user INCREMENT pe click karta hai to state me 1 add karna hai
     case "DECREMENT":
       return state - 1;
     default:
