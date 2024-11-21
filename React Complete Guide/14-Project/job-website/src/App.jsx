@@ -138,3 +138,36 @@ const App = () => {
 
 export default App;
 
+{
+  /* <div classNameName='text-3xl bg-blue-500 text-red-500 font-bold text-center'> App
+    </div>
+    <p>Hello World</p>
+    <ul>
+  {names.map((name, index) => (
+    <li key={index}>{name}</li>
+  ))}
+    </ul>
+    {loggedIn ? <p>Logged In</p> : <p>Not Logged In</p>}
+    */
+}
+
+
+
+/*
+1. Navbar
+2. Hero
+3. Keep the app file clean and make a separate home cards component
+<HomeCards>
+    <Card1>
+    <Card2>
+</HomeCards>
+
+So this has its own component called HomeCards but I wanna have each one of these to be separate card components so we can wrap the content in, so whatever the content we wrap will have this background color and I also want to pass in that background color as a prop or pass in the class as a prop.
+
+In the Card component, it will take in {children} props, so children props are what we use for whatever we wrap, so if we pass in like an <h1> 
+into the card component, we wrap the card or wrap the <h1> in the card component then this({children}) would be that h1. Matlab agar component me h1 as a prop send kiya to ye h1 children prop keh laiga.
+
+Ab HomeCards component me <Card/> display karo then is <Card/> me sab children elements like h1 and <a> pass karo aur doosra <Card/> bhi is tarhan display kardo. Also, Card has that bg-gray div and is taking place of that
+
+
+*/
