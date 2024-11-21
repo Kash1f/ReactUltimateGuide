@@ -138,25 +138,3 @@ const App = () => {
 
 export default App;
 
-{
-  /* <div classNameName='text-3xl bg-blue-500 text-red-500 font-bold text-center'> App
-    </div>
-    <p>Hello World</p>
-    <ul>
-  {names.map((name, index) => (
-    <li key={index}>{name}</li>
-  ))}
-    </ul>
-    {loggedIn ? <p>Logged In</p> : <p>Not Logged In</p>}
-    */
-}
-
-
-
-
-// 1. Navbar
-// 2. Hero
-//3. keep the app file clean and make a separate cardwrapper component and have both the cards in there
-// <HomeCards>
-//   <Card1>
-//     <Card2>
