@@ -2,7 +2,9 @@ import jobs from "../jobs.json";
 import JobListing from "./JobListing";
 
 const JobListings = () => {
-  console.log(jobs);
+  
+  // We will use recentJobs = jobs.slice(0, 3); to get the first 3 jobs from the jobs.json file.
+  const recentJobs = jobs.slice(0, 3);
 
   return (
     <section className="bg-blue-50 px-4 py-10">
@@ -14,10 +16,10 @@ const JobListings = () => {
        
        {/*  The map function works like a loop here. It goes through each job in the jobs list and makes a separate JobListing component for it. It also gives each job a unique key and sends its data to the JobListing component using the job prop. */}
 
-          {jobs.map((job) => (
+          {recentJobs.map((job) => (
             <JobListing key={job.id} job={job} />
           ))}
-          
+
         </div>
       </div>
     </section>
