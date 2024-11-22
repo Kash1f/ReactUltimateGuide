@@ -1,5 +1,4 @@
-{
-    "jobs": [
+ [
       {
         "id": "1",
         "title": "Senior React Developer",
@@ -73,7 +72,7 @@
       {
         "id": "6",
         "title": "React Native Developer",
-        "type": "Full-Time",
+        "type": "Part-Time",
         "description": "Join our team as a Front-End Developer in beautiful Portland, OR. We are looking for a skilled and enthusiastic individual to help us create innovative web solutions. Competitive salary and great benefits package available.",
         "location": "Portland, OR",
         "salary": "$100K - $110K",
@@ -85,4 +84,4 @@
         }
       }
     ]
-  }
+  
