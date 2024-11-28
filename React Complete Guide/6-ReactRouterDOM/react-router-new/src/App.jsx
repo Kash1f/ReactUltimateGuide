@@ -4,26 +4,45 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Dashboard from "./components/Dashboard";
+import Navbar from "./components/Navbar";
 
 const router = createBrowserRouter([
   {
     path: "/", // The path of the route
-    element: <Home />, // The component to be rendered on this path
+    // The component to be rendered on this path
+    element: (
+      <>
+        <Navbar />
+        <Home />
+      </>
+    ),
   },
   {
     path: "/about", // The path of the route
-    element: <About />, // The component to be rendered on this path
+    element: (
+      <>
+        <Navbar />
+        <About />
+      </>
+    ),
   },
   {
     path: "/dashboard", // The path of the route
-    element: <Dashboard />, // The component to be rendered on this path
+    element: (
+      <>
+        <Navbar />
+        <Dashboard />
+      </>
+    ),
   },
 ]);
 
 const App = () => {
-  return <div>
-    <RouterProvider router={router} />
-  </div>;
+  return (
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  );
 };
 
 export default App;
