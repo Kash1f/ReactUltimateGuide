@@ -1,6 +1,6 @@
 import React from "react";
 
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Dashboard from "./components/Dashboard";
@@ -21,7 +21,9 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <div></div>;
+  return <div>
+    <RouterProvider router={router} />
+  </div>;
 };
 
 export default App;
