@@ -7,14 +7,15 @@ import Navbar from './components/Navbar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 
-const RouterExample = () => {
+const App = () => {
 
 
   return (
     <>
+    
       <BrowserRouter>
-      
       <Navbar/>
+      
         <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/about' element={<About/>}></Route>
@@ -26,4 +27,4 @@ const RouterExample = () => {
   )
 }
 
-export default RouterExample
+export default App;
