@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 
 const router = createBrowserRouter([
   {
+    
     path: "/", // The path of the route
     // The component to be rendered on this path
     element: (
