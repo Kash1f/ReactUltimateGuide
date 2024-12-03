@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
     {/* Code that can be fixed on top of our entire app */}
     
       <Navbar/>
+      <Hero/>
 
       <Routes>
         <Route path="/" element={<Home />} />
