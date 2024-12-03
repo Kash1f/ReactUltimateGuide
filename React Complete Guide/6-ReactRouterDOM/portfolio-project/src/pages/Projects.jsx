@@ -1,18 +1,22 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
 
 const Projects = () => {
-
-  let nav = useNavigate();
-
-
   return (
-  
-  <>
-  <div>These are the Projects</div>
-  <button onClick={()=>{nav("/")}}>Go to Home Page &rarr;</button>
-  </>
-  )
-}
+    <>
+      <h2>My Projects</h2>
+      {/* we want all the items to be flexed */}
+      <div className="flex">
+        {/* first div for project 1 */}
+        <div>
+            <h3>Project 1</h3>
+            {/* division to add an image */}
+            <div>
+                <img src="" alt="project-1" className="img-responsive img-circle" />
+            </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default Projects
+export default Projects;
