@@ -8,7 +8,8 @@ function App() {
 
   return (
     <>
-     <Form1></Form1>
+    
+    <Form2/>
     </>
   )
 }
