@@ -5,10 +5,10 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
+import ParamComp from "./components/ParamComp";
 
 const router = createBrowserRouter([
   {
-    
     path: "/", // The path of the route
     // The component to be rendered on this path
     element: (
@@ -37,20 +37,19 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path : "student/:id", // The path of the route
+    path: "student/:id", // The path of the route
     element: (
       <>
         <Navbar />
-        <Dashboard />
+        <ParamComp />
       </>
     ),
-  }
+  },
 ]);
 
 const App = () => {
   return (
     <div>
-     
       <RouterProvider router={router} />
     </div>
   );
