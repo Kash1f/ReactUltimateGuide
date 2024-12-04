@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
 
@@ -13,6 +13,7 @@ const Dashboard = () => {
     <>
    <h3>Dashboard Page</h3>
    <button onClick={handleClick}>Go back to Page </button>
+   <Outlet/>
    </>
   )
 }
