@@ -1,9 +1,9 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 const RecipeList = () => {
 
-  const location = useLocation();
+  // const location = useLocation();
 
   return (
     <div>
