@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
 
@@ -13,6 +13,29 @@ const Dashboard = () => {
     <>
     <div>
    <h3>Dashboard Page</h3>
+   <ul>
+      <li>
+        <Link
+          to="courses"
+          className={({isActive}) => isActive ? "active-link" : ""}>
+              Courses
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="reports"
+          className={({isActive}) => isActive ? "active-link" : ""}>
+          Reports
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="mock-tests"
+          className={({isActive}) => isActive ? "active-link" : ""}>
+          MockTests
+        </Link>
+      </li>
+    </ul>
 
    <Outlet/>
    </div>
@@ -21,3 +44,4 @@ const Dashboard = () => {
 }
 
 export default Dashboard;
+
