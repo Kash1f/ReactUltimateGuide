@@ -45,12 +45,12 @@ const App = () => {
     <div>
       <h1>React Routing with Custom Hooks</h1>
       <div>
-      <Link to="/recipe-list">Go to Recipes via Link</Link>
+      <Link to="/home/recipe-list">Go to Recipes via Link</Link>
       </div>
-      <button onClick={() => navigate("/recipe-list")}>
+      <button onClick={() => navigate("/home/recipe-list")}>
         Navigate to Recipe List Page
       </button>
-      <button onClick={() => navigate("/comments-list")}>
+      <button onClick={() => navigate("/home/comments-list")}>
         Navigate to Comments List Page
       </button>
 
