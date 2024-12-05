@@ -8,35 +8,36 @@ import Navbar from "./components/Navbar";
 import ParamComp from "./components/ParamComp";
 import Courses from "./components/Courses";
 import MockTests from "./components/MockTests";
+import Reports from "./components/Reports";
 
 const router = createBrowserRouter([
   {
     path: "/", // The path of the route
     // The component to be rendered on this path
-    element: (
+    element: 
       <>
         <Navbar />
         <Home />
       </>
-    ),
+    ,
   },
   {
     path: "/about", // The path of the route
-    element: (
+    element: 
       <>
         <Navbar />
         <About />
       </>
-    ),
+    ,
   },
   {
     path: "/dashboard", // The path of the route
-    element: (
-      <>
+    element: 
+      <div>
         <Navbar />
         <Dashboard />
-      </>
-    ),
+      </div>,
+    
     children: [
       {
         path: "courses",
@@ -54,13 +55,17 @@ const router = createBrowserRouter([
   },
   {
     path: "student/:id", // The path of the route
-    element: (
+    element: 
       <>
         <Navbar />
         <ParamComp />
       </>
-    ),
+    ,
   },
+  {
+    path: "*",
+    element: <h1>404 Page Not Found</h1>,
+  }
 ]);
 
 const App = () => {

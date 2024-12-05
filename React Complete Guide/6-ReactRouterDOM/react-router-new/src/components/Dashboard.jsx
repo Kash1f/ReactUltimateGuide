@@ -3,19 +3,21 @@ import { Outlet, useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/')
-  }
+  // const handleClick = () => {
+  //   navigate('/')
+  // }
 
   return (
     <>
+    <div>
    <h3>Dashboard Page</h3>
-   <button onClick={handleClick}>Go back to Page </button>
+
    <Outlet/>
+   </div>
    </>
   )
 }
 
-export default Dashboard
+export default Dashboard;
