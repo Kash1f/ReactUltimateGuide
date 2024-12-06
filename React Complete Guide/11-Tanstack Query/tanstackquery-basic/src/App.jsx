@@ -1,18 +1,33 @@
-import React from 'react'
-import { useQuery } from '@tanstack/react-query'
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const App = () => {
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["todo"],
+    queryFn: () =>
+      fetch("https://jsonplaceholder.typicode.com/todos").then((res) =>
+        res.json()
+      ),
+  });
 
-  const {} = useQuery({queryKey: ['todo'], queryFn: () => fetch('https://jsonplaceholder.typicode.com/todos')})
+  if (error) return <div>There is an Error</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div>
-      
+    <div className="App">
+      {" "}
+      {data?.map((todo) => (
+        <div key={todo.id}>
+          {" "}
+          <h1>ID:{todo.id}</h1>
+          <h1>TITLE:{todo.title}</h1>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 
 /*
 
