@@ -12,12 +12,12 @@ const App = () => {
 
   const { mutate } = useMutation({mutationFn: (newPost) => fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
-    body: JSON.stringify(newPost)
+    body: JSON.stringify(newPost),})
     .then((res)=> res.json()),  //This is gonna be an object containing all the data
   })
 
 
-      })
+      
 
   if (error) return <div>There is an Error</div>;
   if (isLoading) return <div>Loading...</div>;
