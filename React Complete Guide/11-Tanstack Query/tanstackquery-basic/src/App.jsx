@@ -1,14 +1,22 @@
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 const App = () => {
   const { data, error, isLoading } = useQuery({
     queryKey: ["todo"],
     queryFn: () =>
-      fetch("https://jsonplaceholder.typicode.com/todos").then((res) =>
+      fetch("https://jsonplaceholder.typicode.com/posts").then((res) =>
         res.json()
       ),
   });
+
+  const {} = useMutation({mutationFn: (newPost) => fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify(newPost),
+  })
+
+
+      })
 
   if (error) return <div>There is an Error</div>;
   if (isLoading) return <div>Loading...</div>;
@@ -16,11 +24,15 @@ const App = () => {
   return (
     <div className="App">
       {" "}
+
+      {/* we can have add posts button, we will not have user input, we will just hardcode the data into the request. */}
+
       {data?.map((todo) => (
         <div key={todo.id}>
           {" "}
-          <h1>ID:{todo.id}</h1>
-          <h1>TITLE:{todo.title}</h1>
+          <h4>ID:{todo.id}</h4>
+          <h4>TITLE:{todo.title}</h4>
+          <p>{todo.body}</p>
         </div>
       ))}
     </div>
@@ -38,5 +50,36 @@ The useQuery hook is a hook that allows us to fetch data from the server.
 
 We will give query key of an array. The reason its an array is because we can pass multiple query keys when we work with more data.
 Well we fetch data using fetchapi or axios in useQuery too but the other stuff is simplified in useQuery when the data is fetched. 
+
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["todo"],
+    queryFn: () =>
+      fetch("https://jsonplaceholder.typicode.com/todos").then((res) =>
+        res.json()
+      ),
+  })
+
+Here, we are passing the query key as ["todo"]. This is the unique query key that we will use to distinguish this query from all other queries. We are also passing the query function which is a function that will return the data from the server. The query function is a function that will return a promise. So, we need to return a promise from the query function. 
+
+3. The data that we get from the server is an array of objects. So, we need to map over the data and return a div for each object. We will use the key prop to give a unique key to each div. 
+
+4. We will use the error prop to check if there is an error. If there is an error, we will return a div with the message "There is an Error". 
+
+5. We will use the isLoading prop to check if the data is loading. If the data is loading, we will return a div with the message "Loading...". 
+
+6. We will use the data?.map to map over the data and return a div for each object. We will use the key prop to give a unique key to each div.
+
+Data Mutation:
+
+useMutation hook is a hook that allows us to mutate data on the server. It will handle all the things related to mutating data for us
+useQuery se sirf data fetch ho satka hai while useMutation se data mutate means post, put, patch, delete ho satka hai.
+
+
+whenever we use call this function, we need to pass some arguments to it. Why is that? Because when we fetch data we don't need any arguments unless we are fetching by id or something, with mutating we need to add some data and send it through the body. So, we will need to pass the data that we want to mutate. And whenever we call this mutation, its gonna use this newData parameter as an argument to this function. 
+After this we are gonna use fetch("abcd"). We will specify the HTTP method to be used for making this request, in this case we will use POST.
+
+const {} = useMutation({mutationFn: (newData)=>    })    
+
+
 
 */
