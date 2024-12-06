@@ -10,9 +10,10 @@ const App = () => {
       ),
   });
 
-  const {} = useMutation({mutationFn: (newPost) => fetch("https://jsonplaceholder.typicode.com/posts", {
+  const { mutate } = useMutation({mutationFn: (newPost) => fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
-    body: JSON.stringify(newPost),
+    body: JSON.stringify(newPost)
+    .then((res)=> res.json()),  //This is gonna be an object containing all the data
   })
 
 
@@ -26,6 +27,15 @@ const App = () => {
       {" "}
 
       {/* we can have add posts button, we will not have user input, we will just hardcode the data into the request. */}
+
+      <button onClick={()=> mutate(
+        {
+          "userId": 5000,
+          "id": 4000,
+          "title": "Hey there!",
+          "body": "This is a test post"
+        },
+  )}>Add Posts</button>
 
       {data?.map((todo) => (
         <div key={todo.id}>
@@ -71,11 +81,11 @@ Here, we are passing the query key as ["todo"]. This is the unique query key tha
 
 Data Mutation:
 
-useMutation hook is a hook that allows us to mutate data on the server. It will handle all the things related to mutating data for us
+useMutation hook is a hook that allows us to mutate data on the server. It will handle all the things related to mutating data for us.
 useQuery se sirf data fetch ho satka hai while useMutation se data mutate means post, put, patch, delete ho satka hai.
 
 
-whenever we use call this function, we need to pass some arguments to it. Why is that? Because when we fetch data we don't need any arguments unless we are fetching by id or something, with mutating we need to add some data and send it through the body. So, we will need to pass the data that we want to mutate. And whenever we call this mutation, its gonna use this newData parameter as an argument to this function. 
+Whenever we use call this function, we need to pass some arguments to it. Why is that? Because when we fetch data we don't need any arguments unless we are fetching by id or something, with mutating we need to add some data and send it through the body. So, we will need to pass the data that we want to mutate. And whenever we call this mutation, its gonna use this newData parameter as an argument to this function. 
 After this we are gonna use fetch("abcd"). We will specify the HTTP method to be used for making this request, in this case we will use POST.
 
 const {} = useMutation({mutationFn: (newData)=>    })    
