@@ -8,7 +8,7 @@ import NotFound from "./pages/not-found/NotFound";
 
 function CustomRoutes() {
 
-  const element = useRoutes([
+  const router = useRoutes([
     {
       path: "/home",
       element: <Layout/>,
@@ -34,7 +34,7 @@ function CustomRoutes() {
   }
   ]);
 
-  return element;
+  return router;
 }
 
 const App = () => {

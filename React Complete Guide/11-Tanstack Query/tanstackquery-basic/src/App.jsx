@@ -42,7 +42,7 @@ const App = () => {
 
       {data?.map((todo) => (
         <div key={todo.id}>
-          {" "}
+         
           <h4>ID:{todo.id}</h4>
           <h4>TITLE:{todo.title}</h4>
           <p>{todo.body}</p>
