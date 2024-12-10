@@ -15,10 +15,12 @@ const App = () => {
 
   const { mutate, isError, isPending, isSuccess } = useMutation({mutationFn: (newPost) => fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
-    body: JSON.stringify(newPost),})
-    .then((res)=> res.json()), //This is gonna be an object containing all the data
+    body: JSON.stringify(newPost),
+    headers : {"Content-Type": "application/json; charset= UTF-8"}
+  }).then((res)=> res.json()), //This is gonna be an object containing all the data
+      
      onSuccess: () => {
-        queryClient.invalidateQueries({queryKey: ["posts"]});
+        queryClient.setQueryData({queryKey: ["posts"]}); //refetch the post data when the mutation is successful
      }
   })
 
