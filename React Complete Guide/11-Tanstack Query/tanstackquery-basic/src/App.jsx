@@ -1,9 +1,12 @@
 import React from "react";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 const App = () => {
+
+  const queryClient = useQueryClient();
+
   const { data, error, isLoading } = useQuery({
-    queryKey: ["todo"],
+    queryKey: ["posts"],
     queryFn: () =>
       fetch("https://jsonplaceholder.typicode.com/posts").then((res) =>
         res.json()
@@ -13,7 +16,10 @@ const App = () => {
   const { mutate, isError, isPending, isSuccess } = useMutation({mutationFn: (newPost) => fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     body: JSON.stringify(newPost),})
-    .then((res)=> res.json()),  //This is gonna be an object containing all the data
+    .then((res)=> res.json()), //This is gonna be an object containing all the data
+     onSuccess: () => {
+        queryClient.invalidateQueries({queryKey: ["posts"]});
+     }
   })
 
 
