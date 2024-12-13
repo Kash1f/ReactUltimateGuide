@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import { AppLayout } from "./components/Layout/AppLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { FetchOld } from "./pages/FetchOld";
+import "./App.css"
 
 const router = createBrowserRouter([
       {
