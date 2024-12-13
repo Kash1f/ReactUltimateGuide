@@ -1,32 +1,33 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
+import { AppLayout } from "./components/Layout/AppLayout";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-
-
-    const router = createBrowserRouter([
+const router = createBrowserRouter([
       {
         path: "/",
-        element: <MainLayout />,
+        element: <AppLayout />,
         children: [
           {
             path: "/",
             element: <Home />,
           },
-          {
-            path: "/trad",
-            element: <FetchOld />,
-          },
-          {
-            path: "/rq",
-            element: <FetchRQ />,
-          },
-          {
-            path: "/rq/:id",
-            element: <FetchIndv />,
-          },
-          {
-            path: "/infinite",
-            element: <InfiniteScroll />,
-          },
+          // {
+          //   path: "/trad",
+          //   element: <FetchOld />,
+          // },
+          // {
+          //   path: "/rq",
+          //   element: <FetchRQ />,
+          // },
+          // {
+          //   path: "/rq/:id",
+          //   element: <FetchIndv />,
+          // },
+          // {
+          //   path: "/infinite",
+          //   element: <InfiniteScroll />,
+          // },
         ],
       },
     ]);
@@ -36,7 +37,6 @@ import Home from "./pages/Home";
       return (
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router}></RouterProvider>
-          <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       );
     };
