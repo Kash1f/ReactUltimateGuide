@@ -2,9 +2,11 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
-      Footer
-    </div>
+    <footer>
+    <p>
+        @copyright 2022 - KYX
+    </p>
+    </footer>
   )
 }
 
