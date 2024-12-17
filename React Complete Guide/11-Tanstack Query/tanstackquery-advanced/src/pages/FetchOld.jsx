@@ -4,12 +4,14 @@ import { fetchPosts } from "../api/api"
 
 const FetchOld = () => {
 
-  const [posts, setPosts] = useState([])
+  // const [posts, setPosts] = useState([])
 
   const getPostsData = async () => {
    try{
     // const response = await fetchPosts("https://jsonplaceholder.typicode.com/posts");
     const response = await fetchPosts();
+    console.log(response);
+    
 
    }catch(error){
      console.log(error)
