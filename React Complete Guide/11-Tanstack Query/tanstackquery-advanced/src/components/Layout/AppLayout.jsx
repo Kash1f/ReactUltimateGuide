@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import  Header from "./Header";
 import  Footer  from "./Footer";
 
-export const AppLayout = () => {
+ const AppLayout = () => {
   return (
     <>
       <Header />
@@ -12,3 +12,5 @@ export const AppLayout = () => {
     </>
   );
 };
+
+export default AppLayout;

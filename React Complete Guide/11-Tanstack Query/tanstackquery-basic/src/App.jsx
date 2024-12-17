@@ -8,7 +8,7 @@ const App = () => {
   const { data, error, isLoading } = useQuery({
     queryKey: ["posts"],
     queryFn: () =>
-      fetch("https://jsonplaceholder.typicode.com/posts").then((res) =>
+      fetch("").then((res) =>
         res.json()
       ),
   });
@@ -48,14 +48,7 @@ const App = () => {
         },
   )}>Add Posts</button>
 
-      {data?.map((todo) => (
-        <div key={todo.id}>
-         
-          <h4>ID:{todo.id}</h4>
-          <h4>TITLE:{todo.title}</h4>
-          <p>{todo.body}</p>
-        </div>
-      ))}
+    
     </div>
   );
 };
