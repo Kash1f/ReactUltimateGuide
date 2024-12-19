@@ -1,8 +1,11 @@
-import { createContext } from 'react'
+import React from 'react'
 
-const AuthContext = createContext(null);
-
-//within this component we maintain the user state and define the functions to login and logout
-export const AuthProvider = () => {
-    
+const AuthContext = () => {
+  return (
+    <div>
+      
+    </div>
+  )
 }
+
+export default AuthContext
