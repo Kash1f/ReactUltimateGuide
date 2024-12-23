@@ -11,9 +11,17 @@ const Login = () => {
       email: email,
       password: password,
     };
-    console.log(payload);
     
-  };
+  axios.post("https://api.escuela.js.co/api/v1/auth/login", payload)
+  .then((res)=>{
+    console.log("Login Successful", res);
+  })
+  .catch((err)=>{ 
+    console.log("Login Failed", err);
+    
+  })
+
+}
 
   return (
     <>
