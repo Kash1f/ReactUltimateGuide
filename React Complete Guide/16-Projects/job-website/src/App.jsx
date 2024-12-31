@@ -1,29 +1,29 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import HomeCards from "./components/HomeCards";
-import JobListings from "./components/JobListings";
-import ViewJobs from "./components/ViewJobs";
-import { Route } from "react-router-dom";
+import React from "react";;
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import Layout from "./layout/Layout";
+import HomePage from "./pages/HomePage";
+import JobsPage from "./pages/JobsPage";
+import AddJobPage from "./pages/AddJobPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={<MainLayout />}>
+      <Route path='/' element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path='/jobs' element={<JobsPage />} />
-        <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
-        <Route
+        {/* <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} /> */}
+        {/* <Route
           path='/edit-job/:id'
           element={<EditJobPage updateJobSubmit={updateJob} />}
           loader={jobLoader}
-        />
-        <Route
+        /> */}
+        {/* <Route
           path='/jobs/:id'
           element={<JobPage deleteJob={deleteJob} />}
           loader={jobLoader}
-        />
+        /> */}
         <Route path='*' element={<NotFoundPage />} />
       </Route>
     )
