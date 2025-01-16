@@ -13,10 +13,13 @@ export const addTodo = async (todo) => {
     return await api.post("/todos", todo);
 }
 
+
 export const updateTodo = async (todo) => {
-    return await api.put("/todos", todo);
+    return await api.put(`/todos/${todo.id}`, todo);
 }
 
 export const deleteTodo = async (id) => {
-    return await api.delete(`/todos/${id}`);
+    return await api.delete(`/todos/${id}`, id);
 }
+
+export default api;
