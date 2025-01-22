@@ -1,10 +1,11 @@
+import Todo from "./components/Todo"
 
 
 const App = () => {
   return (
-    <div>
-      This is React Query v5
-    </div>
+   <>
+   <Todo/>
+   </>
   )
 }
 
