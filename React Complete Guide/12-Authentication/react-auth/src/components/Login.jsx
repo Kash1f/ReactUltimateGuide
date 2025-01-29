@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 const Login = () => {
@@ -12,8 +13,10 @@ const Login = () => {
       password: password,
     };
     
-  axios.post("https://api.escuela.js.co/api/v1/auth/login", payload)
+  axios.post("https://api.escuelajs.co/api/v1/auth/login", payload)
   .then((res)=>{
+    localStorage.setItem("token", JSON.stringify(res.data.access_token));
+    alert("Login Successful");
     console.log("Login Successful", res);
   })
   .catch((err)=>{ 
