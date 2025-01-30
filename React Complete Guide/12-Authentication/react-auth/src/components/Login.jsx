@@ -21,10 +21,7 @@ const Login = () => {
   })
   .catch((err)=>{ 
     console.log("Login Failed", err);
-    
-  })
-
-}
+    })}
 
   return (
     <>
@@ -44,10 +41,6 @@ const Login = () => {
       <div className="flex justify-center">
       <button onClick={handleSubmit} className="bg-blue-500 text-white rounded-md px-4 py-1 shadow-md">Login</button>
       </div>
-
-
-
-
       </div>
     </>
   );

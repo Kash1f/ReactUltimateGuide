@@ -1,29 +1,62 @@
-import axios from 'axios';
-import React from 'react'
+import axios from "axios";
+import React from "react";
+import { useState } from "react";
 
 const Profile = () => {
+  const [userData, setUserData] = useState({});
 
-    getProfileData = () => {
+  const getProfileData = () => {
+    //get the token from localstorage
+    const token = JSON.parse(localStorage.getItem("token"));
 
-        const token = localStorage.getItem("token");
+    const header = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    axios
+      .get("https://api.escuelajs.co/api/v1/auth/profile", header)
+      .then((res) => {
+        setUserData(res.data);
+        console.log("Profile Data", res);
+      })
+      .catch((err) => {
+        console.log("Profile Data Failed", err);
+      });
+  };
 
-    }
-
-    axios.get("https://api.escuelajs.co/api/v1/users/profile",)
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    alert("Logout Successful");
+    setUserData({});
+  };
 
   return (
     <div>
-        
-      
+      <p>My Profile</p>
+      <button
+        className="bg-blue-400 text-white px-3 py-1"
+        onClick={getProfileData}
+      >
+        Get Profile Data
+      </button>
+      <button
+        className="bg-amber-400 text-white px-3 py-1 rounded-md shadow-md"
+        onClick={handleLogout}
+      >
+        Logout
+      </button>
+
+      <div className="space-y-4 text-white"> 
+        <p>Name: {userData?.name || "N/A"}</p>
+        <p>Email: {userData?.email || "N/A"}</p>
+        <p>Role: {userData?.role || "N/A"}</p>
+        <img className="rounded-full h-10 w-10" src={userData?.avatar} alt="Avatar" />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
-
-
-
-
-
+export default Profile;
 
 //Jese hi login ho user ka data idhar is Profile page pe show hojai
