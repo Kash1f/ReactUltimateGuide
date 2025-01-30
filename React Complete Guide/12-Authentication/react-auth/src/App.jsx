@@ -5,8 +5,8 @@ import Profile from "./components/Profile";
 const App = () => {
   return (
    <>
-   <Login/>
    <Profile/>
+   <Login/>
    </>
   );
 };

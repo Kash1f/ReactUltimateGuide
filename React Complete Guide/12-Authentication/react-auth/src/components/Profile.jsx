@@ -15,12 +15,13 @@ const Profile = () => {
       },
     };
     axios
-      .get("https://api.escuelajs.co/api/v1/auth/profile", header)
+      .get("", header)
       .then((res) => {
         setUserData(res.data);
         console.log("Profile Data", res);
       })
       .catch((err) => {
+        alert("You are not logged in");
         console.log("Profile Data Failed", err);
       });
   };
@@ -28,7 +29,7 @@ const Profile = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     alert("Logout Successful");
-    setUserData({});
+    setUserData(); //clear the user data
   };
 
   return (
@@ -47,13 +48,17 @@ const Profile = () => {
         Logout
       </button>
 
+        {userData &&
+
       <div className="space-y-4 text-white"> 
         <p>Name: {userData?.name || "N/A"}</p>
         <p>Email: {userData?.email || "N/A"}</p>
         <p>Role: {userData?.role || "N/A"}</p>
         <img className="rounded-full h-10 w-10" src={userData?.avatar} alt="Avatar" />
       </div>
+  }
     </div>
+        
   );
 };
 

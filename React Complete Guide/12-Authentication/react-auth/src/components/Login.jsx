@@ -13,7 +13,7 @@ const Login = () => {
       password: password,
     };
     
-  axios.post("https://api.escuelajs.co/api/v1/auth/login", payload)
+  axios.post("", payload)
   .then((res)=>{
     localStorage.setItem("token", JSON.stringify(res.data.access_token));
     alert("Login Successful");
