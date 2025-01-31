@@ -25,6 +25,7 @@ const Login = () => {
 
   return (
     <>
+    <div className="flex justify-center items-center">
       <div className="bg-sky-700 border shadow-md space-y-4 p-5 rounded-md m-20 w-[250px]">
       <p className="font-semibold text-center">Login Page</p>
 
@@ -40,6 +41,7 @@ const Login = () => {
       
       <div className="flex justify-center">
       <button onClick={handleSubmit} className="bg-blue-500 text-white rounded-md px-4 py-1 shadow-md">Login</button>
+      </div>
       </div>
       </div>
     </>
