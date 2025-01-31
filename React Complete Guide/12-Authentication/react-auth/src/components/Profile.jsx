@@ -15,7 +15,7 @@ const Profile = () => {
       },
     };
     axios
-      .get("", header)
+      .get("https://api.escuelajs.co/api/v1/auth/profile", header)
       .then((res) => {
         setUserData(res.data);
         console.log("Profile Data", res);
