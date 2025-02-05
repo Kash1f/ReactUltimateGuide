@@ -2,7 +2,7 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div>React Role Based Auth</div>
+   <RouterProvider router={router} />
   )
 }
 
